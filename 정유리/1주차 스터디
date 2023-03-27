@@ -16,7 +16,20 @@
 
 3) 운영체제
 - 운영체제 구조 및 시스템 설계 이론 공부
+ os: 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하는 소프트웨어 계층
+ 목적 : 컴퓨터 시스템을 편리하게 사용할 수 있는 환경 제공, 컴퓨터 시스템의 자원을 효율적으로 관리
+ 분류 : 
+ -동시 작업 가능 여부 : 단일작업(MS-DOS) / 다중작업(UNIX,MS WINDOWS)
+ -사용자수 : 단일사용자(MS-DOS,MS WINDOWS) / 다중사용자(UNIX,NT SERVER)
+ -처리방식 : 일괄처리 / 시분할(UNIX) / 실시간(로보트 제어,반도체 장비, 원자로공장 제어)
+ 용어 :
+ Multitasking
+ Multiprogramming
+ Time sharing
+ Multiprocess
+ Multiprocessor
+ 
 
 4) 솔루션챌린지
-- ppt에 들어갈 내용 준비
+- ppt에 들어갈 내용 준비 (재안배경, UN Goals, 서비스 소개, 기술 소개, 확장 가능성)
 - spring+aws+mariadb 연동해보기
