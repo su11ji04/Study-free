@@ -1,0 +1,24 @@
+3/22 ~ 3/31
+통신공학 
+
+* Protocol
+a set of rules that allow peer layer to communicate.
+Comprised format and order of message.
+
+Need: 
+1.	Source must activate communications path or inform network of destination.
+2.	Source nust make sure that destination is prepared to receive data.
+3.	Flie transfer application in source must confirm file management program at destination is prepared to accept and store file.
+4.	Format translation function may need to be performed if the format on systems are different
+
+Datalink layer (2 layer)
+-	covers the exchange of data between host and the network that it is attached to
+-	Issues
+   Next – hop address provision. 
+   Invoking specific services lie priority. 
+   For two entities attached to the same network 
+
+Network layer (3 layer)
+-	Implements procedures needed to allow data to travel across multiple interconnected networks.
+-	Uses the internet protocol to provide routing function.
+-	Router connects two networks and relays data between
