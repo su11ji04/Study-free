@@ -1,0 +1,21 @@
+기간 : 1주차 (2023.03.22~2023.03.31)
+
+1. 스터디 주제 : cs231n 1강 듣기, 컴퓨터 알고리즘 과제, chatgpt와 slackbot 연결하기
+
+2. 스터디 내용 : 
+
+1) cs231n 1강 필기
+
+https://drive.google.com/file/d/1LUsFprA2DaL-NWzxYHOXJifF5DXwspRB/view?usp=sharing
+
+2) 컴퓨터 알고리즘 과제
+
+- Θ(n^2), Θ(nlogn)의 시간복잡도를 갖는 quick sort 코드 짜기
+- greedy algorithm을 이용한 코드 작성 후 최적 해인지 알아보기
+- in-place 정렬이면서 Θ(nlogn)의 시간복잡도를 갖는 merge sort 코드 짜기
+
+
+3) chatgpt와 slackbot 연결하기
+slackbot과 대화할 수 없다는 창이 계속해서 떴는데 결론은 영어로 구글링 해봐서 해결함
+생성한 slackbot 자체에는 문제가 없는데 gpt랑 연결 안되는 이유를 찾아봐야함
+
