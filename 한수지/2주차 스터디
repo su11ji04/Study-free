@@ -1,0 +1,19 @@
+Information and communication engineering
+
+Noise 
+Thermal: Due to thermal agitation of electrons
+Intermodulation: Produce signals that are the sum, difference or multiples of original frequencies sharing a medium.
+Crosstalk: A signal from one line is picked up by another
+Impulse: Noncontinuous noise consisting of irregular pulses or spikes of short duration and relatively high amplitude
+
+Design Factor to determine data rate & distance
+Bandwidth
+ - Higher bandwidth gives higher data rate
+Transmission impairments
+ - Attenuation, Attenuation distortion, delay distortion, noise 
+ - Impairments limit the distance 
+Interference(crosstalk)
+ - Interference from competing signals in overlapping frequency bands can distort or wipe out a signal
+Number of receivers
+ - On a shared link, each attachment introduces some attenuation and distortion,      limiting distance and /or data rate
+ - More receivers introduces more attenuation
