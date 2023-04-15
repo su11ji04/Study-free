@@ -1,0 +1,252 @@
+기간 : 2주차 (2023.04.01~2023.04.14)
+1. 스터디 주제 : 데이터베이스 시험 준비, 인공지능 과제, 오토마타 과제
+
+2. 스터디 내용 : 
+
+데이터베이스 시험 준비
+
+1. Purpose of Database Systems (ch1 p6, 7)
+File system의 문제점 7가지
+1) 데이터 중복과 불일치(일관성)
+2) 데이터 접근의 어려움(새로운 작업을 하려면 새로운 프로그램이 필요)
+3) 데이터 isolation(format이 맞지 않는 경우, 가져다 사용할 수 없음)
+4) 데이터 무결성 문제(무결성 제약 조건이 명시적으로 기술되지 않아서 새로운 조건 추가 및 기존 조건 변경이 어려움)
+5) 업데이트의 원자성 유지 불가능(all or nothing)
+6) 여러 사용자의 동시접근 어려움(데이터 일관성에 문제가 생김) 
+7) 보안 문제(특정 사용자에 대한 일부 접근 허용과 제한이 어려움)
+
+ => 이는 Database system으로 다 해결 가능
+
+2. 데이터 모델의 의미는?
+1) 데이터
+2) 데이터 관계
+3) 데이터 의미
+4) 데이터 제약조건 
+을 설명하기 위한 기본적인 도구이다.
+
+3. row 
+  = record 
+  = tuple 
+
+4. Level of Abstraction
+
+View <- Logical level <- Physical level
+1) Physical level
+record가 어떻게 저장되는지, 파일 시스템과 mapping은 어떻게 되는지
+file, storage와 연관
+
+2) Logical level
+데이터 베이스에 저장된 데이터 간의 관계
+table, record, data type과 연관
+
+3) View
+응용프로그램과 함께 작동
+보안 목적으로 특정 정보들을 숨길 수 있음
+data type은 신경쓰지 않음(숨겨짐)
+어떤 목적으로 어떤 프로그램을 사용하느냐에 따라 view가 달라짐
+
+5. Schema and Instance 
+1) Schema 
+ “구조”
+ 프로그램에서의 변수의 type과 유사
+
+ - Logical Schema 
+ = Data Model
+ 데이터베이스의 전체적인 논리적 구조
+ 응용프로그램이 논리적 스키마에 의존함
+ - Physical Schema 
+ 데이터 베이스의 전체적인 물리적 구조 
+
+2) Instance 
+ “Schema의 객체”
+ 프로그램에서의 변수, 변수의 값과 유사
+
+
+6. Physical Data Independence 
+논리적 schema를 변경하지 않고, 물리적 schema를 변경할 수 있음
+
+7. 언어의 범주 2가지
+
+1) Data Definition Language (DDL) 
+어떤 table을 만들 것인가(column의 type도 포함)
+Data dictionary 에 저장할 schema를 만드는 과정
+예) create table instructor (
+ ID char(5), name varchar(20), dept_name varchar(20), salary numeric(8,2)) 
+
+- Data dictionary란?
+데이터에 관한 데이터임
+schema, 무결성 제약조건, 권한에 대한 정보가 포함되어있음
+
+2) Data Manipulation Language (DML) 
+table(data model)에 access, insert, update, delete하기 위한 언어
+2가지 유형이 존재
+ - Procedural DML(절차적 DML) 
+  : 데이터를 어떻게 얻는지에 대해 명시 (How)
+   (보통의 프로그래밍 언어와 유사)
+
+- Declarative DML(선언적 DML) 
+   : 필요한 데이터를 명시, 원하는 데이터가 무엇인가 (What)
+    non-Procedural DML이라고도 함
+    = query language
+
+8.  SQL Query Language 
+non-Procedural함 즉, Declarative하다와 동치
+input : table(s) 
+output : table
+프로그램 언어 같지 않음
+다른 고수준 언어에 내장되어 사용됨
+응용프로그램은 
+1) 내장된 SQL
+또는
+2) OOBC/JDBC 와 같은 API를 이용해서 query를 데베로 전송
+
+9. Database Access from Application Program
+(응용 프로그램에서의 데이터베이스 접근)
+
+- 비절차적 질의 언어인 SQL은 범용 프로그램보다 덜 강력하다.
+(사용자로부터의 입력, 화면 출력, 네트워크 통신과 같은 동작을 지원하지 않음)
+
+- 이러한 계산과 동작은 C/C++, Java, Python(host language)과 같은 언어에 내장된 SQL 질의를 통해 데이터베이스에 접근하는 형태로 작성되어야 함
+
+
+10. Database Design
+데이터 베이스의 일반적인 구조 (=schema)를 설계하는 과정
+Logical Design과 Physical Design 단계를 나눌 수 있음
+
+1) Logical Design
+“좋은” 관계 스키마 집합 찾기
+비즈니스 – 어떤 속성 기록?
+컴퓨터과학 – 어떻게 분배? 어떤 관계 스키마?
+
+2) Physical Design 
+물리적 레이아웃, 저장 이슈, 성능 문제
+
+11. Database Engine 
+전체 시스템의 책임을 다루는 모듈로 분할되어 있는 데이터 베이스 시스템을 의미
+
+1) Storage Manager 
+데이터와 / 응용프로그램 / 쿼리 간 인터페이스 제공
+파일 관리자와 상호작용
+효율적인 저장, 검색, 갱신
+
+- 구성요소 
+•Authorization and integrity manager  
+•Transaction manager  
+•File manager  
+•Buffer manager  
+
+저장 관리자가 구현하는 데이터 구조 
+• Data files(데이터 파일) 
+데이터 실제 내용이 저장됨 , 데이터베이스 자체를 저장하는 파일
+• Data dictionary (데이터 사전)
+데이터 베이스 스키마에 대한 meta data 저장
+데이터 베이스 구조와 속성에 대한 정보가 저장됨
+
+• Indices(인덱스) 
+데이터 항목에 빠르게 접근할 수 있게 
+특정 항목에 대한 포인터 제공
+데이터 베이스 성능에 영향을 미침
+
+2) Query Processor 
+- DDL Interpreter(DDL 해석기):
+데이터베이스의 스키마를 정의하는 DDL 문을 해석하여 데이터 사전에 해당 정의를 기록
+
+- DML Compiler: 
+쿼리 언어로 작성된 DML 문(SQL) ->  저수준 명령어(Query Evaluation Engine가 이해할 수 있는 형식)로 구성된 평가 계획으로 변환(Evaluation Plan) 후 최적화 과정을 통해 선택된 가장 비용이 덜 드는 plan을 Query Evaluation Engine로 전송
+
+Query Optimization(쿼리 최적화): 
+여러 가지 Evaluation Plans 중 가장 비용(실행 시간)이 적게 드는 plan 선택 (성능 향상에 기여)
+
+- Query Evaluation Engine(쿼리 평가 엔진) :
+컴파일러에 의해 생성되고 최적화 된 Evaluation Plan를 실행 
+이 엔진은 쿼리를 실행하여 실제 데이터베이스에서 결과를 얻는 역할 수행
+
+
+cf) Query Processing의 과정
+1. Parsing and translation 
+2. Optimization
+ 3. Evaluation(run query)
+ 
+3) Transaction Management 
+데이터베이스 애플리케이션에서 단일 논리적 기능을 수행하는 연산들의 집합
+
+Transaction-management component  
+시스템 장애와 트랜잭션 실패에도 데베가 일관된(정확한) 상태를 유지하도록 보장
+
+Concurrency-control manager  
+“동시에 실행되는 여러 개의 트랜잭션”을 제어 -> 일관성 보장
+
+12. Database Architecture 
+1) Centralized databases  (중앙집중식 데이터베이스)
+하나에서 몇 개의 코어, 공유 메모리를 사용하는 형태
+2) Client-server
+ 하나의 서버 머신이 여러 개의 클라이언트 머신을 대신하여 작업을 실행하는 형태
+3) Parallel databases 
+• 여러 개의 코어와 공유 메모리를 사용하는 형태
+• 공유 디스크
+• 공유되지 않는 리소스를 사용하는 형태
+
+데이터를 여러 개의 저장장치에 나누어 저장하지만 사용자는 하나로 느낌
+4) Distributed databases(분산 데이터베이스)
+• 지리적으로 분산되어 있는 형태
+• 스키마/데이터의 다양성이 있는 형태
+3번 개념과 유사하지만, 지리적으로 떨어져있음 
+
+13. Database applications
+
+일반적으로 두 가지 또는 세 가지 부분으로 분할됨
+
+1) Two- tier architecture (두 계층 아키텍처): 
+애플리케이션 자체가 클라이언트 컴퓨터에 위치하며,
+애플리케이션은 UI를 제공하고 
+데이터베이스 시스템에 직접적으로 데이터를 요청하거나 업데이트
+즉, 클라이언트에서 직접 데이터베이스 시스템에 접근
+ex) Java - JDBC
+
+2) Three-tier architecture (세 계층 아키텍처): 
+클라이언트, 서버, 데이터베이스 시스템 세 개의 계층으로 나뉨
+클라이언트는 단순히 사용자 인터페이스를 표시하고 
+사용자 입력을 서버에 전달하는 역할만을 수행하며, 
+데이터베이스 접근은 서버에서 처리
+웹 응용프로그램과 유사한 형태
+ex) Java – Servlet, HTML – PHP
+
+2. 인공지능 과제
+
+1) Training loop
+for e in range(num_epochs):                                         # Training loop
+    error = 0.0
+    for i in range(num_train_samples // batch_size):                  # Batch loop
+        X_train_batch = X_train[i*batch_size:(i+1)*batch_size]
+        y_train_batch = y_train[i*batch_size:(i+1)*batch_size]
+
+        y_pred_batch = neuron.forward(X_train_batch).ravel()            # Forward
+
+        batch_error = error_function(y_pred_batch, y_train_batch)    # Error calculation
+        error += batch_error
+        
+        
+        ### Please fill here
+        ##  You have to calculate gradients and update weights here
+        ##  Derive how to calculate gradients with the new error function
+
+
+
+        # Update weight
+        y_error = y_pred_batch - y_train_batch
+        # delta = diff_sigmoid(X_train_batch) * X_train_batch
+        delta = 1 * X_train_batch
+
+        neuron.weights -= np.sum(delta.T * y_error * learning_rate, axis=1).reshape(2,1)
+        # neuron.bias -= np.sum(diff_sigmoid(1).T * y_error * learning_rate)
+        neuron.bias -= np.sum(y_error * learning_rate)
+        
+        
+        print("Epoch " + str(e + 1) + " [" + str(i*batch_size) + \
+          "/" + str(num_train_samples) + "] Error: " + str(error))
+
+
+3. 오토마타 과제
+사람들이랑 맞춰봤는데, 소신껏 갔더니 많이 틀림..
+데베 과제는 안 맞춰봤더니 또 많이 틀렸다.
+앞으로는 맞춰보고 다수결에 따라야지.. 
