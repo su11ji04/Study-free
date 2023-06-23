@@ -1,0 +1,20 @@
+정보통신공학 
+VLANS
+
+MEMBERSHIP BY
+PORT GROUP
+Relatively easy to configure
+Need reconfigure when end system moves
+MAC ADDRESS
+Mac address is hardwired into NIC
+VLAN membership must be assigned initially
+PROTOCOL INFORMATION
+Flexible(IP address, transport or higher-layer protocol info)
+Require switches to examine portions of MAC frame above MAC layer => performance impact
+
+COMMUNICATING 
+Switches must have a way of understanding VLAN membership(when station belong to which VLAN)
+Configure information manually
+Network management signaling protocol, so that switches can associate incoming frames with the appropriate VLAN
+Frame tagging(IEEE 802.IQ)
+Header is inserted into each frame on interswitch trunks to uniquely identify to which VLAN a particular MAC-layer frame belong
