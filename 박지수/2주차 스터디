@@ -1,0 +1,37 @@
+기간: 2023/4/1 ~ 2023/4/14
+
+주제: 독립연구 준비
+
+내용: 인공지능의 학습
+
+1. 인공지능은 이해할까?
+
+- 관련 논문
+A. M. Turing (1950) Computing Machinery and Intelligence. Mind 49: 433-460
+
+Contrary Views on the Main Question(기계가 생각할 수 있는가?에 대한 반대 견해들)
+
+1. 신학적 반론 The Theological Objection
+2. ‘모래 속의 머리’ 반론 The 'Heads in the Sand' Objection
+3. 수학적 반론 The Mathematical Objection
+4. 의식과 관련한 주장 The Argument from Consciousness
+5. 다양한 불능과 관련한 주장 Arguments from Various Disabilities
+    - 기계는 실수를 할 수 없다
+    - ‘기능의 에러’와 ‘결론의 에러’를 혼동 ← 사람이 프로그래밍 과정에서 실수한 것이 기능의 에러, 그런 실수 없이도 엉뚱한 답을 얻는 것이 결론의 에러이다. 이때 엉뚱한 답이란 그냥 아무 말이나 하고 있는 것 같이 보이는 것이다. (환각과 창의 참고)
+    - 기계 자신은 스스로의 생각이 될 수 없다는 주장은 기계가 어떤 주제에 대한 생각을 갖고 있다는 것을 보여 줄 수 있을 때만 가능하다.
+6. 레이디 러브레이스의 반론 Lady Lovelace's Objection
+7. 신경계의 연속성과 관련한 주장 Argument from Continuity in the Nervous System
+8. 불연속 상태 기계가 연속 상태의 신경계를 모방할 수 있나이는 흉내게임에서 이점을 얻지 못한다 ← 이해 안 되는 부분
+9. 행위의 비형식에 관련한 주장 The Argument from Informality of Behaviour
+10. 초감각 지각과 관련한 주장 The Argument from Extrasensory Perception
+
+
+2. 연결주의
+connectivism 연결주의 -> 여러 뉴런을 연결시켜 놓기만 하면 된다.
+- 학습: 이 연결로 작업 수행에 실패하면 연결 상태 변경
+- 많이 해볼수록 잘한다
+하향식 접근이 모든 것을 알고 있다고 전제한 상태에서 이루어지는 학습인 반면, 상향식 접근은 모르는 상태에서 시행착오를 통해 학습하는 것이다. 
+따라서 하향식 접근에서 이미 알고 있기 때문에야말로 할 수 있는, 사전에 분류 기준을 준다거나 특정한 결과를 주어 그 방향으로 유도한다거나 하는 것을, 상향식 접근에서는 하지 않고, 할 필요가 없다.
+
+
+3. 시맨틱 (https://youtu.be/55tRetTTrdQ)

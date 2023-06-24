@@ -1,0 +1,18 @@
+기간: 2023/4/15 ~ 2023/4/28
+
+주제: 독립연구 준비
+
+내용: word2vec analogy
+
+1. word2vec analogy
+
+- 단순히 +, - 연산자로 벡터 계산을 하는 것으로 예상하는 결과를 얻을 수 없었다.
+print(wv.most_similar(wv['king'] + wv['queen'] - wv['man']))
+[('queen', 0.8422122001647949), ('king', 0.8070623278617859), ('queens', 0.6293326020240784), ...]
+
+- gensim의 함수의 매개변수를 사용해서 analogy의 예상하는 결과를 얻을 수 있었다.
+Word2Vec.most_similar(positive=[], negative=[], topn=10, restrict_vocab=None, indexer=None)
+: Find the top-N most similar words. Positive words contribute positively towards the similarity, negative words negatively.
+
+print(wv.most_similar(positive=['woman', 'king'], negative=['man'], topn = 1))
+[('queen', 0.7118193507194519)]
